@@ -1,3 +1,4 @@
+//è¿™çœŸçš„åªæ˜¯ä¸€ä¸ªæ™®é€šçš„ä»£ç é›¨
 <CRAZY DATA RAIN>
 <html>
     <head>
@@ -20,31 +21,31 @@
             var ctx = cvs.getContext("2d");
             var cw = cvs.width = document.body.clientWidth;
             var ch = cvs.height = document.body.clientHeight; 
-            //¶¯»­»æÖÆ¶ÔÏó
+            //åŠ¨ç”»ç»˜åˆ¶å¯¹è±¡
             var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-            var codeRainArr = []; //´úÂëÓêÊı×é
-            var cols = parseInt(cw/14); //´úÂëÓêÁĞÊı
-            var step = 16 ;    //²½³¤£¬Ã¿Ò»ÁĞÄÚ²¿Êı×ÖÖ®¼äµÄÉÏÏÂ¼ä¸ô
-            ctx.font = "bold 36px Palace Script MT"; //ÉùÃ÷×ÖÌå£¬¸öÈËÏ²»¶Î¢ÈíÑÅºÚ
+            var codeRainArr = []; //ä»£ç é›¨æ•°ç»„
+            var cols = parseInt(cw/14); //ä»£ç é›¨åˆ—æ•°
+            var step = 16 ;    //æ­¥é•¿ï¼Œæ¯ä¸€åˆ—å†…éƒ¨æ•°å­—ä¹‹é—´çš„ä¸Šä¸‹é—´éš”
+            ctx.font = "bold 36px Palace Script MT"; //å£°æ˜å­—ä½“ï¼Œä¸ªäººå–œæ¬¢å¾®è½¯é›…é»‘
 
 function createColorCv() {
-//»­²¼»ù±¾ÑÕÉ«
+//ç”»å¸ƒåŸºæœ¬é¢œè‰²
 ctx.fillStyle="#242424";
 ctx.fillRect(0,0,cw,ch); 
 }
 
-            //´´½¨´úÂëÓê
+            //åˆ›å»ºä»£ç é›¨
             function createCodeRain() {
                 for (var n = 0; n < cols; n++) {
                     var col = []; 
-                    //»ù´¡Î»ÖÃ£¬ÎªÁËÁĞÓëÁĞÖ®¼ä²úÉú´íÎ»
+                    //åŸºç¡€ä½ç½®ï¼Œä¸ºäº†åˆ—ä¸åˆ—ä¹‹é—´äº§ç”Ÿé”™ä½
                     var basePos = parseInt(Math.random()*300);
-                    //Ëæ»úËÙ¶È 3~13Ö®¼ä
+                    //éšæœºé€Ÿåº¦ 3~13ä¹‹é—´
                     var speed = parseInt(Math.random()*10)+3;
-                    //Ã¿×éµÄxÖáÎ»ÖÃËæ»ú²úÉú
+                    //æ¯ç»„çš„xè½´ä½ç½®éšæœºäº§ç”Ÿ
                     var colx = parseInt(Math.random()*cw)
 
-   //ÂÌÉ«Ëæ»ú
+   //ç»¿è‰²éšæœº
 var rgbr= 0;
 var rgbg= parseInt(Math.random()*255);
 var rgbb= 0;
@@ -55,8 +56,8 @@ var rgbb= 0;
                             x : colx, 
                             y : -(step*i)-basePos, 
                             speed : speed, 
-//                            text : parseInt(Math.random()*10)%2 == 0 ? 0 : 1  //Ëæ»úÉú³É0»òÕß1
-                            text : ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","s","t","u","v","w","x","y","z","%","!","@","#","$","^","&","*","(",")"][parseInt(Math.random()*11)], //Ëæ»úÉú³É×ÖÄ¸Êı×éÖĞµÄÒ»¸ö
+//                            text : parseInt(Math.random()*10)%2 == 0 ? 0 : 1  //éšæœºç”Ÿæˆ0æˆ–è€…1
+                            text : ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","s","t","u","v","w","x","y","z","%","!","@","#","$","^","&","*","(",")"][parseInt(Math.random()*11)], //éšæœºç”Ÿæˆå­—æ¯æ•°ç»„ä¸­çš„ä¸€ä¸ª
 color : "rgb("+rgbr+','+rgbg+','+rgbb+")"
                         }
                         col.push(code);  
@@ -64,50 +65,50 @@ color : "rgb("+rgbr+','+rgbg+','+rgbb+")"
                     codeRainArr.push(col);
                 }
             }
-            //´úÂëÓêÏÂÆğÀ´
+            //ä»£ç é›¨ä¸‹èµ·æ¥
             function codeRaining(){
-                //°Ñ»­²¼²Á¸É¾»
+                //æŠŠç”»å¸ƒæ“¦å¹²å‡€
                 ctx.clearRect(0,0,cw,ch);
-//´´½¨ÓĞÑÕÉ«µÄ»­²¼
+//åˆ›å»ºæœ‰é¢œè‰²çš„ç”»å¸ƒ
 //createColorCv();
                 for (var n = 0; n < codeRainArr.length; n++) {
-                    //È¡³öÁĞ
+                    //å–å‡ºåˆ—
                     col = codeRainArr[n];
-                    //±éÀúÁĞ£¬»­³ö¸ÃÁĞµÄ´úÂë
+                    //éå†åˆ—ï¼Œç”»å‡ºè¯¥åˆ—çš„ä»£ç 
                     for (var i = 0; i < col.length; i++) {
                         var code = col[i]; 
                         if(code.y > ch){ 
-                            //Èç¹û³¬³öÏÂ±ß½çÔòÖØÖÃµ½¶¥²¿
+                            //å¦‚æœè¶…å‡ºä¸‹è¾¹ç•Œåˆ™é‡ç½®åˆ°é¡¶éƒ¨
                             code.y = 0;
                         }else{
-                            //ÔÈËÙ½µÂä
+                            //åŒ€é€Ÿé™è½
                             code.y += code.speed;
                         }
-                        //ÑÕÉ«Ò²Ëæ»ú±ä»¯
+                        //é¢œè‰²ä¹Ÿéšæœºå˜åŒ–
 
                         //ctx.fillStyle = "hsl("+(parseInt(Math.random()*359)+1)+",30%,"+(50-i*2)+"%)"; 
 
-//ÂÌÉ«Öğ½¥±äÇ³
+//ç»¿è‰²é€æ¸å˜æµ…
 
 
 //ctx.fillStyle = "hsl(123,30%,"+(30-i*2)+"%)"; 
 
-//ÂÌÉ«Ëæ»ú
+//ç»¿è‰²éšæœº
 //var r= 0;
 //var g= parseInt(Math.random()*255) + 3;
 //var b= 0;
 //ctx.fillStyle = "rgb("+r+','+g+','+b+")"
 ctx.fillStyle = code.color;
-                        //°Ñ´úÂë»­³öÀ´
+                        //æŠŠä»£ç ç”»å‡ºæ¥
                         ctx.fillText(code.text,code.x,code.y);
                     }
                 }
                 requestAnimationFrame(codeRaining);
             }
 
-            //´´½¨´úÂëÓê
+            //åˆ›å»ºä»£ç é›¨
             createCodeRain();
-            //¿ªÊ¼ÏÂÓê°É GO>>
+            //å¼€å§‹ä¸‹é›¨å§ GO>>
             requestAnimationFrame(codeRaining);
         </script>
     </body>
